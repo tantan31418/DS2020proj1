@@ -394,7 +394,7 @@ void Block::create_block(){
         Matrix_Term temp1(1,init_col,1);
         Matrix_Term temp2(2,init_col,1);
         Matrix_Term temp3(2,init_col+1,1);
-        Matrix_Term temp4(2,init_col+1,1);
+        Matrix_Term temp4(2,init_col+2,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
