@@ -91,8 +91,8 @@ int main(int argc,char* argv[]){
 Game_board::Game_board(int r,int c){
     row = r;
     col = c;
-    for (int i=1;i<=r;i++){
-        for (int j=1;j<=c;j++){
+    for (int i=0;i<=r+1;i++){
+        for (int j=0;j<=c+1;j++){
             board[i][j]=0;
         }
     }
