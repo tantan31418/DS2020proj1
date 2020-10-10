@@ -241,12 +241,14 @@ void Block::move_lr(Game_board* gb){
         }
     }
     else {
-        move_down(gb);
+        // move_down(gb);
+        return;
     }
 }
 void Block::move(Game_board* gb){
     move_down(gb);
     move_lr(gb);
+    move_down(gb);
     add_to_board(gb);
 }
 void Block::move_down_1(){
