@@ -16,6 +16,7 @@ class Game_board{
 public:
     Game_board();
     Game_board(int r,int c);
+    Game_board(const Game_board &);//copy constructor
     // int check_2();
     // int check_walls();
     void print_board();
@@ -95,6 +96,17 @@ Game_board::Game_board(int r,int c){
     // for (int i=1;i<=c;i++){
     //     lastempty[i] = r;
     // }
+}
+
+//copy constructor
+Game_board::Game_board(const Game_board &gb2){
+    row = gb2.row;
+    col = gb2.col;
+    for (int i=1;i<=row;i++){
+        for (int j=1;j<=col;j++){
+            board[i][j]=gb2.board[i][j];
+        }
+    }
 }
 
 
@@ -183,6 +195,7 @@ void Block::move_lr(Game_board* gb){
         while (need_to_move!=0){
             move_right();
             //for deb
+            Game_board debug_b(*gb);
             gb->print_board();
             if (check_slot(gb)==1){
                 printf("Invalid!\n");
