@@ -33,7 +33,7 @@ private:
 class Block{
 public:
     Block();
-    Block(int init_col,int moves);
+    Block(string block_type,int init_col,int moves);
     Block move_down_max(Game_board*);//move to lastempty
     Block move_down_1(Game_board*);//move block and add to game board
     Block move_up_1(Game_board*);
