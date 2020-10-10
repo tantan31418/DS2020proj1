@@ -138,7 +138,8 @@ void Game_board::print_board(){
 void Game_board::delete_full(int line){
     for (int i=line;i>=1;i--){
         for (int j=1;j<=col;j++){
-            board[i][j] = board[i-1][j];
+            if (i==1) board[i][j] = 0;
+            else board[i][j] = board[i-1][j];
         }
     }
     //for deb
