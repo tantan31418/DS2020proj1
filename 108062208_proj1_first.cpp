@@ -22,6 +22,7 @@ public:
     void print_board();
     void delete_full(int);
     void delete_all_full();
+    void hit_top();
 
     int row,col;
     int board[20][45];
@@ -77,6 +78,7 @@ int main(int argc,char* argv[]){
         Block bl(b_ty,init_c,mvs);
         bl.move(&game);
         game.delete_all_full();
+        game.hit_top();//check hit top
         game.print_board();
     }
     infile.close();
@@ -157,7 +159,13 @@ void Game_board::delete_all_full(){
         if (fill==col) delete_full(i);
     }
 }
-
+void Game_board::hit_top(){
+    for (int j=1;j<=col;j++){
+        if (board[0][j]!=0){
+            printf("hit top! invalid!\n");
+        }
+    }
+}
 
 int Block::check_slot(Game_board* gb){
     for (int i=0;i<4;i++){
