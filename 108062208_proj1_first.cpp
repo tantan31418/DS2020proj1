@@ -17,8 +17,6 @@ public:
     Game_board();
     Game_board(int r,int c);
     Game_board(const Game_board &);//copy constructor
-    // int check_2();
-    // int check_walls();
     void print_board();
     void delete_full(int);
     void delete_all_full();
@@ -89,7 +87,7 @@ int main(int argc,char* argv[]){
 
 //impl
 
-
+// constructors
 Game_board::Game_board(int r,int c){
     row = r;
     col = c;
@@ -102,9 +100,7 @@ Game_board::Game_board(int r,int c){
     //     lastempty[i] = r;
     // }
 }
-
-//copy constructor
-Game_board::Game_board(const Game_board &gb2){
+Game_board::Game_board(const Game_board &gb2){//copy constructor
     row = gb2.row;
     col = gb2.col;
     for (int i=1;i<=row;i++){
@@ -113,21 +109,20 @@ Game_board::Game_board(const Game_board &gb2){
         }
     }
 }
-
-
 Block::Block(string b_type,int init_c,int mvs){
     block_type = b_type;
     init_col = init_c;
     need_to_move = mvs;
     create_block();
 }
-
 Matrix_Term::Matrix_Term(int r,int c,int v){
     row=r;
     col=c;
     val=v;
 }
-// int Game_board::check_2(){}
+
+
+//Game_board functions
 void Game_board::print_board(){
     printf("Game Status:\n");
     for (int i=1;i<=row;i++){
@@ -167,6 +162,7 @@ void Game_board::hit_top(){
     }
 }
 
+//Block functions
 int Block::check_slot(Game_board* gb){
     for (int i=0;i<4;i++){
         if(gb->board[term_arr[i].row][term_arr[i].col]!=0){
@@ -305,8 +301,6 @@ void Block::move_right(){
         term_arr[i].col++;
     }
 }
-
-
 void Block::create_block(){
     if (block_type == "T1"){
         Matrix_Term temp1(1,init_col,1);
