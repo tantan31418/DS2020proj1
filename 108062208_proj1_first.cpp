@@ -182,11 +182,12 @@ void Block::move_down(Game_board* gb){
             add_to_board(&debug_b);
             debug_b.print_board();
         if (check_slot(gb)==1){//hit below
+            printf("hit other block!\n");
             move_up_1();
             break;
         }
         if(hit_ground(gb)==1){
-            printf("hit!\n");
+            printf("hit wall!\n");
             move_up_1();//move up
             break;
         } 
@@ -202,9 +203,17 @@ void Block::move_lr(Game_board* gb){
             add_to_board(&debug_b);
             debug_b.print_board();
             if (check_slot(gb)==1){
+                printf("hit other block!\n");
                 printf("Invalid!\n");
                 printf("Game Over!\n");
+                break;
             }
+            if(hit_ground(gb)==1){
+                printf("hit wall!\n");
+                printf("Invalid!\n");
+                printf("Game Over!\n");
+                break;
+            } 
             need_to_move--;
         }
     }
@@ -217,9 +226,17 @@ void Block::move_lr(Game_board* gb){
             add_to_board(&debug_b);
             debug_b.print_board();
             if (check_slot(gb)==1){
+                printf("hit other block!\n");
                 printf("Invalid!\n");
                 printf("Game Over!\n");
+                break;
             }
+            if(hit_ground(gb)==1){
+                printf("hit wall!\n");
+                printf("Invalid!\n");
+                printf("Game Over!\n");
+                break;
+            } 
             need_to_move++;
         }
     }
