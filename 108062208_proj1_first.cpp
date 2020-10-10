@@ -165,6 +165,8 @@ int Block::hit_ground(Game_board* gb){
 void Block::move_down(Game_board* gb){
     while (1){
         move_down_1();
+        //for deb
+        gb->print_board();
         if (check_slot(gb)==1){//hit below
             move_up_1();
             break;
@@ -180,6 +182,8 @@ void Block::move_lr(Game_board* gb){
         //right
         while (need_to_move!=0){
             move_right();
+            //for deb
+            gb->print_board();
             if (check_slot(gb)==1){
                 printf("Invalid!\n");
                 printf("Game Over!\n");
@@ -191,6 +195,8 @@ void Block::move_lr(Game_board* gb){
         //left
         while (need_to_move!=0){
             move_left();
+            //for deb
+            gb->print_board();
             if (check_slot(gb)==1){
                 printf("Invalid!\n");
                 printf("Game Over!\n");
