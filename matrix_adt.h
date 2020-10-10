@@ -16,7 +16,7 @@ public:
 
 private:
     int row,col,terms;
-    Matrix_Term term_arr*;
+    Matrix_Term *term_arr;
 };
 
 class Game_board:private S_Matrix{
@@ -43,6 +43,6 @@ private:
     int need_to_move;
     string block_type;
     int init_col,terms;//terms=4
-    Matrix_Term term_arr*;
+    Matrix_Term *term_arr;
 
 };
