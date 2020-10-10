@@ -20,6 +20,8 @@ public:
     // int check_2();
     // int check_walls();
     void print_board();
+    void delete_full(int);
+    void delete_all_full();
 
     int row,col;
     int board[20][45];
@@ -74,6 +76,7 @@ int main(int argc,char* argv[]){
         cout <<"Block "<< b_ty <<" " <<init_c<< " "<< mvs << endl;
         Block bl(b_ty,init_c,mvs);
         bl.move(&game);
+        game.delete_all_full();
         game.print_board();
     }
     infile.close();
@@ -132,6 +135,28 @@ void Game_board::print_board(){
         printf("\n");
     }
 }
+void Game_board::delete_full(int line){
+    for (int i=line;i>=1;i--){
+        for (int j=1;j<=col;j++){
+            board[i][j] = board[i-1][j];
+        }
+    }
+    //for deb
+    printf("delete!\n");
+    print_board();
+}
+void Game_board::delete_all_full(){
+    //start deleting from top
+    for (int i=1;i<=row;i++){
+        int fill=1;
+        while (fill!=col){
+            if (board[i][fill]==0) break;
+            else fill++;
+        }
+        if (fill==col) delete_full(i);
+    }
+}
+
 
 int Block::check_slot(Game_board* gb){
     for (int i=0;i<4;i++){
