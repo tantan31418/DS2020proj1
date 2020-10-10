@@ -186,6 +186,7 @@ void Block::move_down(Game_board* gb){
             break;
         }
         if(hit_ground(gb)==1){
+            printf("hit!\n");
             move_up_1();//move up
             break;
         } 
