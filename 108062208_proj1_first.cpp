@@ -146,12 +146,12 @@ void Game_board::delete_full(int line){
 void Game_board::delete_all_full(){
     //start deleting from top
     for (int i=1;i<=row;i++){
-        int fill=0;
-        while (fill+1!=col){
-            if (board[i][fill+1]==0) break;
+        int fill=1;
+        while (fill<=col){
+            if (board[i][fill]==0) break;
             else fill++;
         }
-        if (fill==col-1) delete_full(i);
+        if (fill==col) delete_full(i);
     }
 }
 void Game_board::hit_top(){
