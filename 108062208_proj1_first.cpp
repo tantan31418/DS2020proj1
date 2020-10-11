@@ -147,8 +147,8 @@ void Game_board::delete_all_full(){
     //start deleting from top
     for (int i=1;i<=row;i++){
         int fill=0;
-        while (fill!=col){
-            if (board[i][fill-1]==0) break;
+        while (fill+1!=col){
+            if (board[i][fill+1]==0) break;
             else fill++;
         }
         if (fill==col) delete_full(i);
