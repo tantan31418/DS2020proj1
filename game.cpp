@@ -147,16 +147,16 @@ void Game_board::delete_full(int line){
     printf("delete!\n");
     print_board();
 }
-void Game_board::delete_all_full(){
-    //start deleting from top
-    for (int i=1;i<=row;i++){
-        int fill=1;
-        while (fill!=col){
-            if (board[i][fill]==0) break;
-            else fill++;
+void Game_board::delete_full(int line){
+    for (int i=line;i>=1;i--){
+        for (int j=1;j<=col;j++){
+            if (i==1) board[i][j] = 0;
+            else board[i][j] = board[i-1][j];
         }
-        if (fill==col) delete_full(i);
     }
+    //for deb
+    printf("delete!\n");
+    print_board();
 }
 void Game_board::hit_top(){
     for (int j=1;j<=col;j++){
