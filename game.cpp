@@ -80,6 +80,7 @@ int main(int argc,char* argv[]){
         game.delete_all_full();
         game.hit_top();//check hit top
         game.print_board();
+        printf("Score:%d\n",rows_eliminated);
     }
     // infile.close();
     /*file in */
