@@ -303,190 +303,190 @@ void Block::move_right(){
 }
 void Block::create_block(){
     if (block_type == "T1"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(1,init_col+1,1);
-        Matrix_Term temp3(1,init_col+2,1);
-        Matrix_Term temp4(2,init_col+1,1);
+        Matrix_Term temp1(-1,init_col,1);
+        Matrix_Term temp2(-1,init_col+1,1);
+        Matrix_Term temp3(-1,init_col+2,1);
+        Matrix_Term temp4(0,init_col+1,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "T2"){
-        Matrix_Term temp1(1,init_col+1,1);
-        Matrix_Term temp2(2,init_col,1);
-        Matrix_Term temp3(2,init_col+1,1);
-        Matrix_Term temp4(3,init_col+1,1);
+        Matrix_Term temp1(-2,init_col+1,1);
+        Matrix_Term temp2(-1,init_col,1);
+        Matrix_Term temp3(-1,init_col+1,1);
+        Matrix_Term temp4(0,init_col+1,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "T3"){
-        Matrix_Term temp1(1,init_col+1,1);
-        Matrix_Term temp2(2,init_col,1);
-        Matrix_Term temp3(2,init_col+1,1);
-        Matrix_Term temp4(2,init_col+2,1);
+        Matrix_Term temp1(-1,init_col+1,1);
+        Matrix_Term temp2(0,init_col,1);
+        Matrix_Term temp3(0,init_col+1,1);
+        Matrix_Term temp4(0,init_col+2,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "T4"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(2,init_col,1);
-        Matrix_Term temp3(2,init_col+1,1);
-        Matrix_Term temp4(3,init_col,1);
+        Matrix_Term temp1(-2,init_col,1);
+        Matrix_Term temp2(-1,init_col,1);
+        Matrix_Term temp3(-1,init_col+1,1);
+        Matrix_Term temp4(0,init_col,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "L1"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(2,init_col,1);
-        Matrix_Term temp3(3,init_col,1);
-        Matrix_Term temp4(3,init_col+1,1);
+        Matrix_Term temp1(-2,init_col,1);
+        Matrix_Term temp2(-1,init_col,1);
+        Matrix_Term temp3(0,init_col,1);
+        Matrix_Term temp4(0,init_col+1,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "L2"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(1,init_col+1,1);
-        Matrix_Term temp3(1,init_col+2,1);
-        Matrix_Term temp4(2,init_col,1);
+        Matrix_Term temp1(-1,init_col,1);
+        Matrix_Term temp2(-1,init_col+1,1);
+        Matrix_Term temp3(-1,init_col+2,1);
+        Matrix_Term temp4(0,init_col,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "L3"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(1,init_col+1,1);
-        Matrix_Term temp3(2,init_col+1,1);
-        Matrix_Term temp4(3,init_col+1,1);
+        Matrix_Term temp1(-2,init_col,1);
+        Matrix_Term temp2(-2,init_col+1,1);
+        Matrix_Term temp3(-1,init_col+1,1);
+        Matrix_Term temp4(0,init_col+1,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "L4"){
-        Matrix_Term temp1(1,init_col+2,1);
-        Matrix_Term temp2(2,init_col,1);
-        Matrix_Term temp3(2,init_col+1,1);
-        Matrix_Term temp4(2,init_col+2,1);
+        Matrix_Term temp1(-1,init_col+2,1);
+        Matrix_Term temp2(0,init_col,1);
+        Matrix_Term temp3(0,init_col+1,1);
+        Matrix_Term temp4(0,init_col+2,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "J1"){
-        Matrix_Term temp1(1,init_col+1,1);
-        Matrix_Term temp2(2,init_col+1,1);
-        Matrix_Term temp3(3,init_col,1);
-        Matrix_Term temp4(3,init_col+1,1);
+        Matrix_Term temp1(-2,init_col+1,1);
+        Matrix_Term temp2(-1,init_col+1,1);
+        Matrix_Term temp3(0,init_col,1);
+        Matrix_Term temp4(0,init_col+1,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "J2"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(2,init_col,1);
-        Matrix_Term temp3(2,init_col+1,1);
-        Matrix_Term temp4(2,init_col+2,1);
+        Matrix_Term temp1(-1,init_col,1);
+        Matrix_Term temp2(0,init_col,1);
+        Matrix_Term temp3(0,init_col+1,1);
+        Matrix_Term temp4(0,init_col+2,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "J3"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(1,init_col+1,1);
-        Matrix_Term temp3(2,init_col,1);
-        Matrix_Term temp4(3,init_col,1);
+        Matrix_Term temp1(-2,init_col,1);
+        Matrix_Term temp2(-2,init_col+1,1);
+        Matrix_Term temp3(-1,init_col,1);
+        Matrix_Term temp4(0,init_col,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "J4"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(1,init_col+1,1);
-        Matrix_Term temp3(1,init_col+2,1);
-        Matrix_Term temp4(2,init_col+2,1);
+        Matrix_Term temp1(-1,init_col,1);
+        Matrix_Term temp2(-1,init_col+1,1);
+        Matrix_Term temp3(-1,init_col+2,1);
+        Matrix_Term temp4(0,init_col+2,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "S1"){
-        Matrix_Term temp1(1,init_col+1,1);
-        Matrix_Term temp2(1,init_col+2,1);
-        Matrix_Term temp3(2,init_col,1);
-        Matrix_Term temp4(2,init_col+1,1);
+        Matrix_Term temp1(-1,init_col+1,1);
+        Matrix_Term temp2(-1,init_col+2,1);
+        Matrix_Term temp3(0,init_col,1);
+        Matrix_Term temp4(0,init_col+1,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "S2"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(2,init_col,1);
-        Matrix_Term temp3(2,init_col+1,1);
-        Matrix_Term temp4(3,init_col+1,1);
+        Matrix_Term temp1(-2,init_col,1);
+        Matrix_Term temp2(-1,init_col,1);
+        Matrix_Term temp3(-1,init_col+1,1);
+        Matrix_Term temp4(0,init_col+1,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "Z1"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(1,init_col+1,1);
-        Matrix_Term temp3(2,init_col+1,1);
-        Matrix_Term temp4(2,init_col+2,1);
+        Matrix_Term temp1(-1,init_col,1);
+        Matrix_Term temp2(-1,init_col+1,1);
+        Matrix_Term temp3(0,init_col+1,1);
+        Matrix_Term temp4(0,init_col+2,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "Z2"){
-        Matrix_Term temp1(1,init_col+1,1);
-        Matrix_Term temp2(2,init_col,1);
-        Matrix_Term temp3(2,init_col+1,1);
-        Matrix_Term temp4(3,init_col,1);
+        Matrix_Term temp1(-2,init_col+1,1);
+        Matrix_Term temp2(-1,init_col,1);
+        Matrix_Term temp3(-1,init_col+1,1);
+        Matrix_Term temp4(0,init_col,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "I1"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(2,init_col,1);
-        Matrix_Term temp3(3,init_col,1);
-        Matrix_Term temp4(4,init_col,1);
+        Matrix_Term temp1(-3,init_col,1);
+        Matrix_Term temp2(-2,init_col,1);
+        Matrix_Term temp3(-1,init_col,1);
+        Matrix_Term temp4(0,init_col,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "I2"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(1,init_col+1,1);
-        Matrix_Term temp3(1,init_col+2,1);
-        Matrix_Term temp4(1,init_col+3,1);
+        Matrix_Term temp1(0,init_col,1);
+        Matrix_Term temp2(0,init_col+1,1);
+        Matrix_Term temp3(0,init_col+2,1);
+        Matrix_Term temp4(0,init_col+3,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
         term_arr.push_back(temp4);
     }
     else if (block_type == "O"){
-        Matrix_Term temp1(1,init_col,1);
-        Matrix_Term temp2(1,init_col+1,1);
-        Matrix_Term temp3(2,init_col,1);
-        Matrix_Term temp4(2,init_col+1,1);
+        Matrix_Term temp1(-1,init_col,1);
+        Matrix_Term temp2(-1,init_col+1,1);
+        Matrix_Term temp3(0,init_col,1);
+        Matrix_Term temp4(0,init_col+1,1);
         term_arr.push_back(temp1);
         term_arr.push_back(temp2);
         term_arr.push_back(temp3);
