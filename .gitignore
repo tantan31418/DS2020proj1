@@ -47,6 +47,7 @@ tatest1.final
 tatest2.final
 tatest3.final
 tatest3_1.final
+*.final
 
 # Reference
 Ref
