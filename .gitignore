@@ -31,7 +31,33 @@
 *.out
 *.app
 
+.DS_store
+
+# VS Code
+.vscode/*
+.vscode
+
 # TA's testbench
 1.data
 2.data
+3.data
 3_revised.data
+doc.data
+tatest1.final
+tatest2.final
+tatest3.final
+tatest3_1.final
+
+# Reference
+Ref
+Ref/*
+
+# My test
+testfio
+testfio.cpp
+testfio.data
+test1.final
+
+# exe
+108062208_proj1_first
+game
