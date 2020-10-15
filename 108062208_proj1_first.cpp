@@ -17,7 +17,7 @@ public:
     Game_board();
     Game_board(int r,int c);
     Game_board(const Game_board &);//copy constructor
-    void print_board();
+    void print_board(ofstream *fh);
     void delete_full(int);
     void delete_all_full();
     void hit_top();
@@ -58,12 +58,10 @@ int main(int argc,char* argv[]){
     int r, c;
     ifstream infile;
     infile.open(argv[1]);
-    cout << "Reading from the file" << endl;
     infile >> r >> c;
-    cout <<"Init Board " <<r <<" "<< c << endl;
     /*Init board*/
     Game_board game(r,c);
-    game.print_board();
+    // game.print_board();
     string b_ty;
     while (1)
     {
@@ -72,15 +70,22 @@ int main(int argc,char* argv[]){
         if (b_ty == "End")
             break;
         infile >> init_c >> mvs;
-        cout <<"Block "<< b_ty <<" " <<init_c<< " "<< mvs << endl;
         Block bl(b_ty,init_c,mvs);
         bl.move(&game);
         game.delete_all_full();
         game.hit_top();//check hit top
-        game.print_board();
+        // game.print_board();
     }
+    
     infile.close();
     /*file in */
+
+    /*file out*/
+    ofstream outfile;
+    outfile.open("108062208_proj1.final");
+    game.print_board(&outfile);
+    outfile.close();
+
 
     return 0;
 }
@@ -123,13 +128,16 @@ Matrix_Term::Matrix_Term(int r,int c,int v){
 
 
 //Game_board functions
-void Game_board::print_board(){
-    printf("Game Status:\n");
+void Game_board::print_board(ofstream *fh){
+    // printf("Game Status:\n");
     for (int i=1;i<=row;i++){
         for (int j=1;j<=col;j++){
-            printf("%d ",board[i][j]);
+            // printf("%d",board[i][j]);
+            *fh <<board[i][j];
+            if (j!= col) *fh<<" ";
         }
-        printf("\n");
+        // printf("\n");
+        *fh<<"\n";
     }
 }
 void Game_board::delete_full(int line){
@@ -140,8 +148,8 @@ void Game_board::delete_full(int line){
         }
     }
     //for deb
-    printf("delete!\n");
-    print_board();
+    // printf("delete!\n");
+    // print_board();
 }
 void Game_board::delete_all_full(){
     //start deleting from top
@@ -157,7 +165,7 @@ void Game_board::delete_all_full(){
 void Game_board::hit_top(){
     for (int j=1;j<=col;j++){
         if (board[0][j]!=0){
-            printf("hit top! invalid!\n");
+            printf("");
         }
     }
 }
@@ -187,7 +195,7 @@ void Block::add_to_board(Game_board* gb){
 int Block::hit_ground(Game_board* gb){
     for (int i=0;i<4;i++){
         if (term_arr[i].row==(gb->row)+1){
-            printf("Block arrive bottom wall!\n");
+            // printf("Block arrive bottom wall!\n");
             return 1;
         }
         // else if(term_arr[i].row==0){
@@ -195,11 +203,11 @@ int Block::hit_ground(Game_board* gb){
             // return 1;
         // }
         else if(term_arr[i].col==0){
-            printf("Block arrive left wall!\n");
+            // printf("Block arrive left wall!\n");
             return 1;
         }
         else if(term_arr[i].col==(gb->col)+1){
-            printf("Block arrive right wall!\n");
+            // printf("Block arrive right wall!\n");
             return 1;
         }
     }
@@ -216,16 +224,16 @@ void Block::move_down(Game_board* gb){
     while (1){
         move_down_1();
         //for deb
-        Game_board debug_b(*gb);
-            add_to_board(&debug_b);
-            debug_b.print_board();
+        // Game_board debug_b(*gb);
+            // add_to_board(&debug_b);
+            // debug_b.print_board();
         if (check_slot(gb)==1){//hit below
-            printf("hit other block!\n");
+            // printf("hit other block!\n");
             move_up_1();
             break;
         }
         if(hit_ground(gb)==1){
-            printf("hit wall!\n");
+            // printf("hit wall!\n");
             move_up_1();//move up
             break;
         } 
@@ -237,19 +245,19 @@ void Block::move_lr(Game_board* gb){
         while (need_to_move!=0){
             move_right();
             //for deb
-            Game_board debug_b(*gb);
-            add_to_board(&debug_b);
-            debug_b.print_board();
+            // Game_board debug_b(*gb);
+            // add_to_board(&debug_b);
+            // debug_b.print_board();
             if (check_slot(gb)==1){
-                printf("hit other block!\n");
-                printf("Invalid!\n");
-                printf("Game Over!\n");
+                // printf("hit other block!\n");
+                // printf("Invalid!\n");
+                // printf("Game Over!\n");
                 break;
             }
             if(hit_ground(gb)==1){
-                printf("hit wall!\n");
-                printf("Invalid!\n");
-                printf("Game Over!\n");
+                // printf("hit wall!\n");
+                // printf("Invalid!\n");
+                // printf("Game Over!\n");
                 break;
             } 
             need_to_move--;
@@ -260,19 +268,19 @@ void Block::move_lr(Game_board* gb){
         while (need_to_move!=0){
             move_left();
             //for deb
-            Game_board debug_b(*gb);
-            add_to_board(&debug_b);
-            debug_b.print_board();
+            // Game_board debug_b(*gb);
+            // add_to_board(&debug_b);
+            // debug_b.print_board();
             if (check_slot(gb)==1){
-                printf("hit other block!\n");
-                printf("Invalid!\n");
-                printf("Game Over!\n");
+                // printf("hit other block!\n");
+                // printf("Invalid!\n");
+                // printf("Game Over!\n");
                 break;
             }
             if(hit_ground(gb)==1){
-                printf("hit wall!\n");
-                printf("Invalid!\n");
-                printf("Game Over!\n");
+                // printf("hit wall!\n");
+                // printf("Invalid!\n");
+                // printf("Game Over!\n");
                 break;
             } 
             need_to_move++;
